@@ -1,24 +1,29 @@
-
-import DataPicker from './calender.tsx';
-import './App.css';
-import { Desktop } from './components/desktop.tsx';
-import { Frame9 } from './components/frame9.tsx';
-import { Frame5 } from './components/frame5.tsx'
-import { SearchBar } from './components/searchicon.tsx';
+import './App.css'
+import { DesktopLayout } from './components/DesktopLayout.tsx'
+import { ContentFrame } from './components/ContentFrame.tsx'
+import { SearchBar } from './components/SearchBar.tsx'
+import { SearchIcon } from './components/SearchIcon.tsx'
+import { SearchInputField } from './components/SearchInputField.tsx'
+import { SearchActionButton } from './components/SearchActionButton.tsx'
+import { SearchCriteriaSelector } from './components/SearchCriteriaSelector.tsx'
+import { PeriodFrame } from './components/Period.tsx'
+import { DataContentFrame } from './components/Dataframe.tsx'
 
 function App() {
   return (
-    <div>
-      <Desktop>
-        <Frame9>
-          <Frame5> {/* ←検索バー含めた全体部 */}
-            <SearchBar></SearchBar>
-          </Frame5>
-          <DataPicker/>
-        </Frame9>
-      </Desktop>
-    </div>
+    <DesktopLayout>
+      <ContentFrame>
+        <SearchBar>
+          <SearchIcon></SearchIcon>
+          <SearchInputField></SearchInputField>
+          <SearchActionButton></SearchActionButton>
+        </SearchBar>
+        <SearchCriteriaSelector></SearchCriteriaSelector>
+        <PeriodFrame></PeriodFrame>
+        <DataContentFrame></DataContentFrame>
+      </ContentFrame>
+    </DesktopLayout>
   )
 }
 
-export default App;
+export default App
