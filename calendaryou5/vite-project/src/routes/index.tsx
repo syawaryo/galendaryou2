@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom'
-import { DataContentFrame } from '../components/Dataframe.tsx'
-import { Layout } from '../components/Layout.tsx'
+import { DataContentFrame } from '../components/Dataframe'
+import { Layout } from '../components/Layout'
 
 export const AppRoutes: RouteObject[] = [
   {
