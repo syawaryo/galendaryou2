@@ -38,7 +38,7 @@ export const SearchIconWrapper = styled.div`
 `
 
 export const Searchhoso = styled.div`
-  background: url('../public/search_hoso.svg') #e2e8f0 50% / cover no-repeat;
+  background: url('/search_hoso.svg') #e2e8f0 50% / cover no-repeat;
   width: 21px;
   height: 16px;
   flex-shrink: 0;
