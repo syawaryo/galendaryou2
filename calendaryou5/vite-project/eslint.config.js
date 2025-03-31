@@ -1,25 +1,25 @@
-import { fileURLToPath } from 'node:url';
-import path from 'node:path';
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
-import js from '@eslint/js';
-import globals from 'globals';
+import js from '@eslint/js'
+import globals from 'globals'
 
-import parser from '@typescript-eslint/parser';
-import tseslint from '@typescript-eslint/eslint-plugin';
+import parser from '@typescript-eslint/parser'
+import tseslint from '@typescript-eslint/eslint-plugin'
 
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 
-import importPlugin from 'eslint-plugin-import';
-import prettierPlugin from 'eslint-plugin-prettier';
+import importPlugin from 'eslint-plugin-import'
+import prettierPlugin from 'eslint-plugin-prettier'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default [
   {
-    ignores: ['dist', '**/*.d.ts','vite.config.ts', 'eslint.config.js'],
+    ignores: ['dist', '**/*.d.ts', 'vite.config.ts', 'eslint.config.js'],
   },
   js.configs.recommended,
   {
@@ -34,9 +34,7 @@ export default [
       },
       parser,
       parserOptions: {
-        project: [
-          path.join(__dirname, 'tsconfig.eslint.json'),
-        ],
+        project: [path.join(__dirname, 'tsconfig.eslint.json')],
         tsconfigRootDir: __dirname,
       },
     },
@@ -71,8 +69,8 @@ export default [
     files: ['vite.config.ts', 'eslint.config.js'],
     languageOptions: {
       parserOptions: {
-        project: undefined, 
+        project: undefined,
       },
     },
   },
-];
+]
