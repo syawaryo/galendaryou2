@@ -5,19 +5,14 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    // React/JSX関連
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
 
-    // ECMAScriptのターゲットと使用する標準ライブラリ
     "target": "ES2020",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
 
-    // モジュール解決関連
     "esModuleInterop": true,
-    // ライブラリの型定義チェックをスキップ（ライブラリ由来のエラー回避に有効）
     "skipLibCheck": true
   },
-  // 必要に応じて "include" は "src" だけでなく拡大/縮小してもOK
   "include": ["src"]
 }
