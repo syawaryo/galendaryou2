@@ -19,7 +19,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default [
   {
-    ignores: ['dist', '**/*.d.ts'],
+    ignores: ['dist', '**/*.d.ts','vite.config.ts', 'eslint.config.js'],
   },
   js.configs.recommended,
   {
@@ -35,8 +35,7 @@ export default [
       parser,
       parserOptions: {
         project: [
-          path.join(__dirname, 'tsconfig.app.json'),
-          path.join(__dirname, 'tsconfig.node.json')
+          path.join(__dirname, 'tsconfig.eslint.json'),
         ],
         tsconfigRootDir: __dirname,
       },
@@ -65,6 +64,14 @@ export default [
     settings: {
       react: {
         version: 'detect',
+      },
+    },
+  },
+  {
+    files: ['vite.config.ts', 'eslint.config.js'],
+    languageOptions: {
+      parserOptions: {
+        project: undefined, 
       },
     },
   },

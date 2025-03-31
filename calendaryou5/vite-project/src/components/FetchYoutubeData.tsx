@@ -102,7 +102,7 @@ export const FetchYoutubeChannelData = async (input: youtubeSearchParams) => {
   const searchParams = {
     part: 'id,snippet',
     key: API_KEY,
-    maxResults: '10',
+    maxResults: '30',
     q: input.inputword,
     type: 'channel',
   }
@@ -119,7 +119,7 @@ export const FetchYoutubeChannelData = async (input: youtubeSearchParams) => {
       part: 'id,snippet,statistics',
       key: API_KEY,
       id: channelIds,
-      maxResults: '10',
+      maxResults: '30',
     }
     const channelResponse = await axios.get(YOUTUBE_CHANNELS_API_URI, { params: channelParams })
     console.log(channelResponse)
@@ -148,7 +148,7 @@ export const FetchYoutubeVideoData = async (input: youtubeSearchParams) => {
   const searchParams = {
     part: 'id,snippet',
     key: API_KEY,
-    maxResults: '10',
+    maxResults: '30',
     q: input.inputword,
     type: 'video',
     publishedAfter: publishedAfter,
@@ -165,7 +165,7 @@ export const FetchYoutubeVideoData = async (input: youtubeSearchParams) => {
       part: 'id, snippet, statistics',
       id: viodeIds,
       key: API_KEY,
-      maxResults: '10',
+      maxResults: '30',
     }
 
     const videoResponse = await axios.get(YOUTUBE_VIDEO_API_URI, { params: videoPrams })

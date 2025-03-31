@@ -1,7 +1,9 @@
 import { FC, useContext } from 'react'
 import { css } from '@emotion/react'
-import { ContentContext } from './ContentContext'
 import { CriteriaContext } from './CriteriaContext'
+import { ContentContext } from './ContentContext'
+import { useParams } from 'react-router-dom'
+import { Pagination } from './Pagination'
 
 const headerRowStyle = css`
   color: #5c6b7e;
@@ -58,8 +60,13 @@ export const DataContentFrame: FC = () => {
     throw new Error('CriteriaContext is not provided.')
   }
   const { channels, criteria, videos } = contentContext
+  const { id: routeId } = useParams<{ id?: string }>()
+  const page = routeId ? parseInt(routeId, 10) : 1
+  const itemsPerPage = 10
+  const startIndex = (page - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
 
-  const channelRows = channels.map((channel, index) => (
+  const channelRows = channels.slice(startIndex, endIndex).map((channel, index) => (
     <div css={[dataRowStyle, index % 2 === 1 && { background: '#FFF' }]} key={channel.id}>
       <div css={videoTitleStyle}>{channel.title}</div>
       <div css={{ width: '82px', textAlign: 'left' }}>{channel.subscriberCount}</div>
@@ -68,7 +75,7 @@ export const DataContentFrame: FC = () => {
     </div>
   ))
 
-  const videoRows = videos.map((video, index) => (
+  const videoRows = videos.slice(startIndex, endIndex).map((video, index) => (
     <div css={[dataRowStyle, index % 2 === 1 && { background: '#FFF' }]} key={video.id}>
       <div css={videoTitleStyle}>{video.title}</div>
       <div css={{ width: '82px', textAlign: 'left' }}>{video.viewCount}</div>
@@ -88,6 +95,7 @@ export const DataContentFrame: FC = () => {
               <div css={{ paddingTop: '5px', width: '82px', textAlign: 'left' }}>総再生数</div>
             </div>
             {channelRows}
+            {<Pagination />}
           </>
         )
       case 'video':
@@ -99,6 +107,7 @@ export const DataContentFrame: FC = () => {
               <div css={{ paddingTop: '5px', width: '82px', textAlign: 'left' }}>いいね数</div>
             </div>
             {videoRows}
+            {<Pagination />}
           </>
         )
     }

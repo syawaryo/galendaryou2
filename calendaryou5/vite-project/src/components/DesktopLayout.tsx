@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppContainer } from '../styled.tsx'
+import { AppContainer } from '../styled'
 import { CriteriaProvider } from './CriteriaContext'
 
 type DesktopProps = {

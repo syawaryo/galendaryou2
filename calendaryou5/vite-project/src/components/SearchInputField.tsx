@@ -13,7 +13,7 @@ const inputFieldStyle = css`
   border-left: none;
   border-right: none;
   position: relative;
-  padding: 2px 0px 0px 5px;
+  padding: 1px 0px 1px 5px;
   margin-right: 0px;
   &:focus {
     outline: none;

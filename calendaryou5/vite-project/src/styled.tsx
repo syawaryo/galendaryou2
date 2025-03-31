@@ -83,7 +83,7 @@ export const SearchButtonWrapper = styled.button`
   &::after {
     content: '検索';
     position: absolute;
-    top: 54%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: Inter, sans-serif;
