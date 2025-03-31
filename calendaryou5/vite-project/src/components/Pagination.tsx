@@ -66,8 +66,8 @@ export const Pagination = () => {
           css={{
             display: 'flex',
             gap: '15px',
-            justifyContent: 'center',
             paddingTop: '45px',
+            paddingLeft: '320px',
           }}
         >
           <Link key={1} to={'/'} css={page === 1 ? activePageStyle : inactivePageStyle}>

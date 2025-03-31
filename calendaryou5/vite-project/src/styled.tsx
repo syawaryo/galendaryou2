@@ -7,9 +7,7 @@ export type ComponentProps = {
 }
 
 export const AppContainer = styled.div`
-  display: flex;
   padding: 46px 321px 124px 0px;
-  align-items: center;
   background: #fff;
 `
 
@@ -17,6 +15,7 @@ export const StyledContentFrame = styled.div`
   display: flex;
   padding: 0px 51px 299px 51px;
   flex-direction: column;
+  width: 1220px;
 `
 
 export const SearchBarWrapper = styled.div`
