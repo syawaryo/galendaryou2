@@ -7,7 +7,7 @@ export type ComponentProps = {
 }
 
 export const AppContainer = styled.div`
-  display: inline-flex;
+  display: flex;
   padding: 46px 321px 124px 0px;
   align-items: center;
   background: #fff;
@@ -56,7 +56,7 @@ const hoverAnimation = keyframes`
 
 export const SearchButtonWrapper = styled.button`
   display: flex;
-  width: 77px;
+  width: 76.8px;
   height: 31px;
   padding: 6px 26px 6px 27px;
   justify-content: center;
